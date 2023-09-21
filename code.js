@@ -17,7 +17,7 @@ fetch(url)
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        return response.json(); // Преобразуем ответ в JSON
+        return response.text(); // Преобразуем ответ в JSON
     })
     .then(data => {
         // Обработка данных
