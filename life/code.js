@@ -14,6 +14,7 @@ let game = false
 
 
 let blocks = Array()
+
 //этот метод нужен для заполнения подсказок где находятся боимбы
 function plusOne(h,w){
     if(h >=0 && h <= countBlock - 1 && w >= 0 && w < countBlock - 1) { // это условиенужно чтоб мы не захолил за границу нашего поля
@@ -27,7 +28,7 @@ function plusOne(h,w){
 // метод начала игры
 function start(sh,sw){
     blocks = Array()
-    for(let h = 0; h<countBlock; h++){
+    for( let h = 0; h<countBlock; h++){
         let wline = Array()
         for(let w = 0; w< countBlock ; w++){
 
@@ -66,6 +67,8 @@ function start(sh,sw){
     }
     game = true
 }
+
+
 
 function draw(){
     context.fillStyle = "#222";

@@ -1,0 +1,27 @@
+label{
+    font-size: 24px;
+
+}
+.input{
+    font-size: 26px;
+    border-radius: 10px;
+    border-color: brown;
+    align-items: center;
+}
+.button{
+    font-size: 24px;
+    border-radius: 5px;
+    background-color: burlywood;
+    border: 0px solid ;
+    padding: 10px 10px 10px 10px;
+}
+.button:hover{
+    background-color: cadetblue;
+    transition: 0.5s ease-out 0.5ms;
+}
+form{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
