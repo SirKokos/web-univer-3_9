@@ -1,45 +1,30 @@
+document.getElementById('b').addEventListener("click", function ()  {
+    event.preventDefault();
+    let data = document.getElementById('IDURL').value;
+
+    fetch(data)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json(); // Преобразуем ответ в JSON
+        })
+        .then(data => {
+            // Обработка данных
+            console.log(data);
+        })
+        .catch(error => {
+            // Обработка ошибок
+            console.error('Произошла ошибка:', error);
+        });
 
 
-// function get(){
-//     let url_locale = document.getElementById('idurl')
-//     let formData = new FormData();
-//     formData.append('url', url_locale);
-//     console.log(formData)
-//     return formData;
-// }
 
 
+    let div = document.createElement("div");
+    div.innerHTML = data;
+    // Очистить содержимое body и добавить новый div
+    document.body.appendChild(div);
 
-const url = document.getElementById('IDURL').value;
 
-fetch(url)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.text(); // Преобразуем ответ в JSON
-    })
-    .then(data => {
-        // Обработка данных
-        console.log(data);
-    })
-    .catch(error => {
-        // Обработка ошибок
-        console.error('Произошла ошибка:', error);
-    });
-// const xht =new XMLHttpRequest()
-//
-// let url_locale = document.getElementById('idurl')
-//
-//
-// xht.open("GET","https://jsonplaceholder.typicode.com/posts")
-// xht.responseType = "json"
-//
-// xht.onload = function (){
-//   console.log(xht.response)
-// }
-//
-// xht.onerror = function (){
-//   console.log(xht.response)
-// }
-// xht.send()
+});
